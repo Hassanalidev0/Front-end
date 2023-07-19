@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +10,150 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+/* footer color */
+.footer{
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* slider above carousel */
+.colSlider{
+  width: 100%;
+  height: auto;
+}
+.sliderTxt{
+  font-size: small;
+  text-align: center;
+  margin-top: 5%;
+}
+.rSlider{
+  border: 2px solid var(--primary-border);
+}
+.rSlider p {
+  color: var(--primary-slider);
+}
+/* top menu in top bar css */
+.topMenue{
+  color: var(--primary-color);
+  display: flex ;
+  list-style: none;
+  justify-content: flex-end;
+}
+.topMenue  li a{
+  text-decoration: none;
+  list-style: none;
+  font-size: var(--fz-10);
+  color: var(--primary-color);
+  margin-left: 4px;
+}
+/* top nav text */
+.topnavText{
+  color: var(--primary-color);
+  height: auto;
+  font-size: 50%;
+  display: flex;
+  align-items: center;
+}
+/* top bar select menu */
+.top-select{
+  color: var(--primary-color);
+  font-size: var(--fz-10);
+  margin-right: 5%;
+}
+.topSelecter{
+ color: var(--primary-color);
+}
+/* search bar menu */
+.search-menu ul{
+  display: flex;
+  justify-content: flex-end;
+}
+.search-menu ul li{
+  list-style: none;
+}
+.search-menu ul li a{
+  text-decoration: none;
+}
+/* card slider */
+.card-slider{
+  width: 30%;
+  height: 30%;
+}
+
+.toplist{
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+/* top icon */
+.topicon{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 5%;
+}
+.topicon a{
+  text-decoration: none;
+  color: var(--primary-color);
+  margin-left: 1%;
+  font-size: var(--fz-10);
+}
+/* navbar list color and styles */
+.navbar-nav li a{
+  color: var(--seconday-navbar) !important;
+  font-size: var(--fz-12);
+}
+.dropdown li a{
+  color: black !important;
+}
+
+/* header colors and styles */
+.topContainer{
+  background-color: var(--primary-topnav);
+}
+.searchContainer{
+  background-color: var(--primary-searchnav);
+}
+.navbarContainer{
+  background-color: var(--primary-navbar);
+}
+/* topnav with clamp */
+.topContainer {
+  width: clamp(60px, 100%, 1350px);
+}
+.topContainer {
+  display: block;
+}
+@media (max-width: 600px) {
+  .topContainer {
+    display: none;
+  }
+}
+
+/* search bar */
+.searchContainer{
+  width: clamp(60px, 100%, 1350px);
+}
+.searchInput {
+  display: block;
+}
+@media (max-width: 600px) {
+  .searchInput {
+    display: none;
+  }
+  .search-menu{
+    margin-left: 31%;
+  }
+  .searchLogo img{
+    width: 60%;
+    margin-top: 5%;
+  }
+}
+
+/* navbar */
+.navbarContainer{
+  width: clamp(60px, 100%, 1350px);
 }
