@@ -16,11 +16,16 @@
    /* for headers */
    --primary-topnav: white;
    --primary-searchnav: white;
-   --primary-navbar: blue;
+   --primary-navbar: rgba(29,112,186);
 
    /* for navbar list color */
    --seconday-navbar: white;
+   --seconday-navbar-dropdown: black;
 
    /* for navbar list font */
    --fz-12: 12px;
+
+   /* card Slider color and size */
+   --primary-background:rgba(0, 0, 0, 0.7);
+   --primary-color-slider: white;
 }

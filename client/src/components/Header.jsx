@@ -7,7 +7,10 @@ const Header = () => {
   return (
     <>
       <Topnav />
+      <hr className="container-fluid my-1 p-0" />
+      <div className="container">
       <Searchbar />
+      </div>
       <Navbar />
     </>
   );
