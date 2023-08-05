@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {  useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Container, Row, Col, Button, Image } from 'react-bootstrap';
 import Layout from './Layout';
-import { addToCart } from '../features/cartSlice';
+import { addToCart,changeItemQuantity } from '../features/cartSlice';
 
 const ProductDetail = () => {
   const dispatch = useDispatch();
@@ -11,17 +11,31 @@ const ProductDetail = () => {
   const location = useLocation();
   const item = location?.state?.item;
 
+  const [quantity, setQuantity] = useState(1);
+  const handleIncrement = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const handleDecrement = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+  const handleAddToCart = () => {
+    dispatch(addToCart({ ...item, quantity: quantity}))
+    dispatch(changeItemQuantity({ id: item.id, newQuantity:quantity}))
+  };
   return (
     <Layout type='noSidebar'>
       <Container className='my-4'>
-        {item ? (
-          <Row className='p-2  border gap-2 border-2'>
+        
+          <Row className='p-2  border gap-2 border-2' key={itemId}>
             <Col md={5} lg={5} className=' d-flex justify-content-end' >
               <div className='product-image border border-2 d-flex justify-content-end' style={{ width: 459, height: 459 }}>
                 <Image src={item?.images[0]} className='w-100 h-100' />
               </div>
             </Col>
-              <Col md={6} lg={6} className='border border-2'>
+            <Col md={6} lg={6} className='border border-2'>
               <div className='product-content d-flex flex-column'>
                 <h2 style={{ fontSize: 25, fontFamily: 'Poppins' }}>{item?.title}</h2>
                 <span>Rating: {item?.rating}</span>
@@ -66,21 +80,28 @@ const ProductDetail = () => {
                 </div>
 
                 <hr />
-               <div className='d-flex gap-2'>
-               <Button>+</Button>
-                <input type='number' style={{width:50,height:50}}></input>
-                <Button>-</Button>
-                <Button className='btn btn-primary' onClick={() => dispatch(addToCart(item))} style={{ width: 171.78, height: 48 }}>
-                  Add to cart
-                </Button>
-               </div>
+                <div className='d-flex gap-2'>
+                <Button onClick={handleIncrement}>+</Button>
+        <input
+          type='number'
+          style={{ width: 50, height: 50 }}
+          value={quantity}
+          readOnly
+        />
+        <Button onClick={handleDecrement}>-</Button>
+        <Button
+          className='btn btn-primary'
+          onClick={handleAddToCart}
+          style={{ width: 171.78, height: 48 }}
+        >
+          Add to cart
+        </Button>
+                </div>
                 <hr />
               </div>
-              </Col>
+            </Col>
           </Row>
-        ) : (
-          <div>Product not found</div>
-        )}
+        
       </Container>
     </Layout>
   );

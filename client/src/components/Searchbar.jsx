@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Navbar, Nav, Form, FormControl, Button, Badge } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
+import {getCartTotal}from '../features/cartSlice'
 
 const Searchbar = () => {
+  
+  const {totalQuantity,cart} = useSelector((state) => state?.allCart)
+  const dispatch  = useDispatch()
+  
+  useEffect(() => {
+    dispatch(getCartTotal())
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cart])
+  
   const navigate = useNavigate()
   return (
-    <Navbar className="d-flex flex-wrap align-items-center d-sm-flex justify-content-between">
-      <Navbar.Brand href="#">
+    <Navbar className=" container d-flex flex-wrap align-items-center d-sm-flex justify-content-between">
+      <Navbar.Brand as={NavLink} to='/'>
         <img src="/images/logo.png" alt="logo" style={{ width: 101, height: 40 }} />
       </Navbar.Brand>
 
@@ -19,8 +30,8 @@ const Searchbar = () => {
             aria-label="Search"
             style={{ width: 374, height: 40 }}
           />
-          <Button variant="outline-success text-wrap border border-2 rounded-end-5" type="submit" style={{ width: 52, height: 40 }}>
-            <i className="bi bi-search"></i>
+          <Button variant="outline-success text-wrap border border-2 rounded-end-5" type="submit" style={{ width: 52, height: 40,backgroundColor:"white" }}>
+            <i className="bi bi-search" style={{color:"black"}}></i>
           </Button>
         </div>
       </Form>
@@ -36,14 +47,14 @@ const Searchbar = () => {
       </Nav>
 
       <Nav className="col-lg-2 col-6  justify-content-end d-lg-flex justify-content-lg-end ">
-        <Button to="/cart" style={{ backgroundColor:"white", border:'none',width:50, height:"auto" }} className="d-flex ">
+        <Button to="/cart" style={{ backgroundColor:"whitesmoke", border:'none',width:50, height:"auto" }} className="d-flex ">
         <i className="bi bi-person " style={{ fontSize:26, color:"black" }}></i> 
         </Button>
-        <Button to="/cart" style={{ backgroundColor:"white", border:'none', width:50, height:"auto" }} className="d-flex ">
+        <Button to="/cart" style={{ backgroundColor:"whitesmoke", border:'none', width:50, height:"auto" }} className="d-flex ">
         <i className="bi bi-heart " style={{ fontSize:26 , color:"black" }}></i><Badge pill bg="secondary" style={{fontSize:10}}>{0}</Badge> 
         </Button>
-        <Button  onClick={() => navigate('/cart')} style={{ backgroundColor:"white", border:'none', width:50, height:"auto" }} className="d-flex ">
-          <i className="bi bi-bag " style={{ color:"black",  fontSize:26   }}  ></i><Badge pill bg="secondary" style={{fontSize:10}}>{0}</Badge> 
+        <Button  onClick={() => navigate('/cart')} style={{ backgroundColor:"whitesmoke", border:'none', width:50, height:"auto" }} className="d-flex ">
+          <i className="bi bi-bag " style={{ color:"black",  fontSize:26   }}  ></i><Badge pill bg="secondary" style={{fontSize:10}}>{totalQuantity}</Badge> 
         </Button>
       </Nav>
     </Navbar>

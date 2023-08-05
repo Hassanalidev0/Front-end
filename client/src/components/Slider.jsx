@@ -37,7 +37,7 @@ const Slider = () => {
           slidesToScroll: 1,
         },
       },
-    ],
+    ]
   };
   return (
     <div className="container">
@@ -45,7 +45,7 @@ const Slider = () => {
         <Sliders {...settings}>
           <div className="d-flex justify-content-center ">
             <div style={{ width: 41, height: 49 }} className="  ">
-              <i class="bi bi-clock-history" style={{ fontSize: 35 }}></i>
+              <i className="bi bi-clock-history" style={{ fontSize: 35 }}></i>
             </div>
             <div className="d-flex flex-column   justify-content-end">
               <span style={{ fontSize: 14, fontWeight: "bolder" }}>
@@ -57,7 +57,7 @@ const Slider = () => {
 
           <div className="d-flex justify-content-center ">
             <div style={{ width: 41, height: 49 }} className="  ">
-              <i class="bi bi-truck" style={{ fontSize: 35 }}></i>
+              <i className="bi bi-truck" style={{ fontSize: 35 }}></i>
             </div>
             <div className="d-flex flex-column   justify-content-end">
               <span style={{ fontSize: 14, fontWeight: "bolder" }}>
@@ -69,7 +69,7 @@ const Slider = () => {
 
           <div className="d-flex justify-content-center ">
             <div style={{ width: 41, height: 49 }} className="  ">
-              <i class="bi bi-coin" style={{ fontSize: 35 }}></i>
+              <i className="bi bi-coin" style={{ fontSize: 35 }}></i>
             </div>
             <div className="d-flex flex-column   justify-content-end">
               <span style={{ fontSize: 14, fontWeight: "bolder" }}>
@@ -81,7 +81,7 @@ const Slider = () => {
 
           <div className="d-flex justify-content-center ">
             <div style={{ width: 41, height: 49 }} className="  ">
-              <i class="bi bi-coin" style={{ fontSize: 35 }}></i>
+              <i className="bi bi-coin" style={{ fontSize: 35 }}></i>
             </div>
             <div className="d-flex flex-column   justify-content-end">
               <span style={{ fontSize: 14, fontWeight: "bolder" }}>
@@ -93,7 +93,7 @@ const Slider = () => {
 
           <div className="d-flex justify-content-center ">
             <div style={{ width: 41, height: 49 }} className="  ">
-              <i class="bi bi-truck" style={{ fontSize: 35 }}></i>
+              <i className="bi bi-truck" style={{ fontSize: 35 }}></i>
             </div>
             <div className="d-flex flex-column   justify-content-end">
               <span style={{ fontSize: 14, fontWeight: "bolder" }}>
@@ -105,7 +105,7 @@ const Slider = () => {
 
           <div className="d-flex justify-content-center  ">
             <div style={{ width: 41, height: 49 }} className="  ">
-              <i class="bi bi-clock-history" style={{ fontSize: 35 }}></i>
+              <i className="bi bi-clock-history" style={{ fontSize: 35 }}></i>
             </div>
             <div className="d-flex flex-column   justify-content-end">
               <span style={{ fontSize: 14, fontWeight: "bolder" }}>

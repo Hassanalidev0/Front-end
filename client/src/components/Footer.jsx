@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import Login from '../views/auth/Login'; // Assuming Login component is in a separate file
+import Login from "../views/auth/Login";
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {
@@ -15,88 +15,169 @@ const Footer = () => {
   };
 
   return (
-    <>
-      <footer className="text-center text-lg-start p-2" >
-        <Container >
-          <Row className="justify-content-between p-2 border border-2">
-            <Col lg="6" className="d-none d-lg-block border border-2">
-              <span>Get connected with us on social networks:</span>
-            </Col>
-            <Col lg="6" className="d-none d-lg-block border border-2">
-              <Form>
-                <Form.Group className="mb-3 d-flex align-items-center">
-                  <Form.Label className="me-2 text-nowrap">SUBSCRIBE NEWSLETTER:</Form.Label>
-                  <Form.Control type="email" />
-                  <Button type="submit">SUBSCRIBE</Button>
-                </Form.Group>
-              </Form>
-            </Col>
-          </Row>
-          <Row className=" justify-content-lg-evenly justify-content-md-evenly">
-            <Col md="4" lg="3" xl="3" className="border border-2 d-flex flex-column">
-              <h6 className="text-uppercase fw-bold">
-              <i class="bi bi-gem">About Us</i>
-              </h6>
-              <p>
-                Super Fast Wordpress Theme 1st Fully working Ajax Theme 42 Unique Shop Layouts
-              </p>
-            </Col>
-            <Col md="4" lg="4" xl="4" className="border border-2 ">
-              <h6 className="text-uppercase fw-bold">Customer Services</h6>
-             <div className="d-lg-flex d-md-flex justify-content-between">
-             <div className="d-flex flex-column">
-              <p><NavLink style={{textDecoration:'none'}} href="#!" className="text-reset">About us</NavLink></p>
-              <p><NavLink style={{textDecoration:'none'}} href="#!" className="text-reset">Contact us</NavLink></p>
-              <p><NavLink style={{textDecoration:'none'}} href="#!" className="text-reset">My Account</NavLink></p>
-              </div>
-              <div className="d-flex flex-column justify-content-end">
-              <p><NavLink style={{textDecoration:'none'}} href="#!" className="text-reset">Order history</NavLink></p>
-              <p><NavLink style={{textDecoration:'none'}} href="#!" className="text-reset">Advanced search</NavLink></p>
-              <p><NavLink style={{textDecoration:'none'}} href="#!" className="text-reset" onClick={handleLoginClick}>Login</NavLink></p>
-              </div>
-             </div>
-            </Col>
-           
-            <Col md="4" lg="3" xl="3" className="border border-2 d-flex flex-column">
-              <h6 className="text-uppercase fw-bold mb-4">Contact info</h6>
-              <div className="d-flex flex-column">
-                <span>
-                <i class="bi bi-house-door"> 1234 Street Name, City, England</i>
-                </span>
-                <span>
-                <i class="bi bi-envelope"> mail@example.com</i>
-                </span>
-                <span>
-                <i class="bi bi-telephone"> 123-456-7890</i>
-                </span>
-              </div>
-              <div>
-                <div className="d-flex justify-content-lg-center justify-content-md-center">
-                  <a href="" className="me-4 link-secondary">
-                  <i class="bi bi-facebook"></i>
-                  </a>
-                  <a href="" className="me-4 link-secondary">
-                  <i class="bi bi-twitter"></i>
-                  </a>
-                  <a href="" className="me-4 link-secondary">
-                  <i class="bi bi-instagram"></i>
-                  </a>
-                </div>
-              </div>
-            </Col>
-          </Row>
 
-        {/* Footer bottom */}
-        <span>© Porto eCommerce. 2023. All Rights Reserved</span>
+      <footer className=" text-start">
+        <Container>
+          <div className="d-lg-flex">
+            <Row>
+              <Col md="6" lg="12" xl="12">
+                <div className=" my-1 d-flex flex-column justify-content-md-start gap-4" style={{maxWidth:300,maxHeight:302}}>
+                  <h3 className="text-uppercase fw-bold " style={{fontSize:15}}>Contact info</h3>
+                  <div className="d-flex flex-column gap-3">
+                    <span className="text-nowrap d-flex flex-column">
+                      <strong style={{fontSize:13}}>Address:</strong>
+                      <span style={{fontSize:13}}>1234 Street Name, City, England</span>
+                    </span>
+
+                    <span className="text-nowrap d-flex flex-column">
+                      <strong style={{fontSize:13}}>EMAIL</strong>
+                      <span style={{fontSize:13}}>mail@example.com</span>
+                    </span>
+
+                    <span className="text-nowrap d-flex flex-column">
+                      <strong style={{fontSize:13}}>PHONE:</strong>
+                      <span style={{fontSize:13}}>123-456-7890</span>
+                    </span>
+                  </div>
+
+                  <div className="d-flex">
+                    <a href="http://Facebook.com" rel="noreferrer" target="_blank" className="me-4 link-secondary">
+                      <i className="bi bi-facebook" style={{fontSize:15}}></i>
+                    </a>
+                    <a href="https://twitter.com" rel="noreferrer" target="_blank" className="me-4 link-secondary">
+                      <i className="bi bi-twitter" style={{fontSize:15}}></i>
+                    </a>
+                    <a href="https://instagram.com" rel="noreferrer" target="_blank" className="me-4 link-secondary">
+                      <i className="bi bi-instagram" style={{fontSize:15}}></i>
+                    </a>
+                  </div>
+                </div>
+              </Col>
+            </Row>
+
+            <Row className=" justify-content-lg-end justify-content-md-start">
+              <Row className="justify-content-lg-end">
+                <Col lg="6" md='6' xl='6' >
+                  <div >
+                  <h4 style={{fontSize:15}}>SUBSCRIBE TO NEWSLETTER</h4>
+                  <p style={{fontSize:13}}>
+                    Get all the latest information on Events, Sales and Offers.
+                    Sign up for newsletter today.
+                  </p>
+                  </div>
+                </Col>
+                <Col
+                  lg="6"
+                  xl="6"
+                  md='6'
+                 
+                >
+                 <div>
+                 <Form>
+                    <Form.Group className="p-1 d-flex ">
+                      <Form.Control type="email" className="border border-2 rounded-start-5" style={{maxWidth:323,height:44}} />
+                      <Button type="submit" className="border border-2 rounded-end-5" style={{width:106,height:44}}>SUBSCRIBE</Button>
+                    </Form.Group>
+                  </Form>
+                 </div>
+                </Col>
+              </Row>
+
+              <Row >
+                <Col md="6" lg="6" xl="6" className="border-top border-2">
+                  <div>
+                  <h4 className="text-uppercase fw-bold" style={{fontSize:15}}>Customer Services</h4>
+                  <div className="d-lg-flex d-md-flex justify-content-lg-between gap-2">
+                    <div className="d-flex flex-column">
+                      <p>
+                        <NavLink
+                          style={{ textDecoration: "none",fontSize:13 }}
+                          to="/about"
+                          className="text-reset"
+                        >
+                          About us
+                        </NavLink>
+                      </p>
+                      <p>
+                        <NavLink
+                          style={{ textDecoration: "none",fontSize:13 }}
+                          to='/contact'
+                          className="text-reset"
+                        >
+                          Contact us
+                        </NavLink>
+                      </p>
+                      <p>
+                        <NavLink
+                          style={{ textDecoration: "none",fontSize:13 }}
+                          to='/'
+                          className="text-reset"
+                        >
+                          My Account
+                        </NavLink>
+                      </p>
+                    </div>
+                    <div className="d-flex flex-column justify-content-end">
+                      <p>
+                        <NavLink
+                          style={{ textDecoration: "none",fontSize:13 }}
+                         to='/'
+                          className="text-reset"
+                        >
+                          Order history
+                        </NavLink>
+                      </p>
+                      <p>
+                        <NavLink
+                          style={{ textDecoration: "none",fontSize:13 }}
+                          to='/'
+                          className="text-reset"
+                        >
+                          Advanced search
+                        </NavLink>
+                      </p>
+                      <p>
+                        <NavLink
+                          style={{ textDecoration: "none",fontSize:13 }}
+                          className="text-reset"
+                          onClick={handleLoginClick}
+                        >
+                          Login
+                        </NavLink>
+                      </p>
+                    </div>
+                  </div>
+                  </div>
+                </Col>
+                <Col
+                  md="6"
+                  lg="6"
+                  xl="6"
+                  className="border-top border-2"
+                >
+                  <div  className=" d-flex flex-column">
+                  <h4 className="text-uppercase fw-bold" style={{fontSize:15}}> 
+                    About Us
+                  </h4>
+                  <p style={{fontSize:13}}>
+                    Super Fast Wordpress Theme 1st Fully working Ajax Theme 42
+                    Unique Shop Layouts
+                  </p>
+                  </div>
+                </Col>
+              </Row>
+            </Row>
+          </div>
+
+          {/* Footer bottom */}
+          <Row className="border-top border-2">
+          <span className="my-4" style={{fontSize:11}}>© Porto eCommerce. 2023. All Rights Reserved</span>
+          </Row>
         </Container>
+      {showLogin && <Login onClose={handleLoginClose} />}
       </footer>
 
-      {showLogin && (
-        <div className="login-popup">
-          <Login onClose={handleLoginClose} />
-        </div>
-      )}
-    </>
+ 
   );
 };
 

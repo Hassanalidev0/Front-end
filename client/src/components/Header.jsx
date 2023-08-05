@@ -6,12 +6,16 @@ const Header = () => {
   const topData=[]
   return (
     <>
+    <div className="container" style={{maxWidth:1200}}>
       <Topnav />
+    </div>
       <hr className="container-fluid my-1 p-0" />
-      <div className="container">
+      <div className="container" style={{maxWidth:1200}}>
       <Searchbar />
       </div>
+
       <Navbar />
+     
     </>
   );
 };

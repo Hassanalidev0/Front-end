@@ -5,8 +5,6 @@ import Home from './views/Home';
 import Blog from './views/Blog';
 import About from './views/About';
 import ProductDetail from './components/ProductDetail';
-import Login from './views/auth/Login';
-import React, { useLayoutEffect } from 'react'
 import ProductList from './components/ProductList';
 import Cart from './views/Cart';
 

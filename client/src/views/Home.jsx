@@ -5,6 +5,9 @@ import Layout from '../components/Layout';
 import CardsData from '../components/CardsData';
 import Card from '../components/Card';
 import ProductData from '../api/ProductData';
+import Services from '../components/Services';
+import Brands from '../components/Brands';
+import Sale from '../components/Sale';
 
 const Home = () => {
   const renderCardsData = Array.from({ length: 3 });
@@ -42,17 +45,17 @@ const Home = () => {
 
       <div className="container d-flex flex-wrap justify-content-around  my-5 " style={{backgroundColor:'white'}}>
         {renderCardsData.map((item, index) => (
-          <div className="my-5 border border-2 slidingCard p-2" style={{backgroundColor:'rgba(0, 0, 0, 0.1)'}}>
+          <div key={index} className="my-5 border border-2 slidingCard p-2" style={{backgroundColor:'rgba(0, 0, 0, 0.1)'}}>
             {/* Render CardsData component */}
-            <CardsData />
+            <CardsData  />
           </div>
         ))}
       </div>
 
-      <div className="container my-5">
+      <div className="container my-5 p-2" style={{ background: 'white' }}>
         <div
           className="row d-flex justify-content-evenly flex-wrap p-1"
-          style={{ background: 'white' }}
+          
         >
           {/* Render only the specified number of products based on the visibleProducts state */}
           {products.slice(0, visibleProducts).map((item) => (
@@ -67,6 +70,19 @@ const Home = () => {
             <button className='btn btn-primary' onClick={handleLoadMore}>Load More</button>
           )}
         </div>
+      </div>
+      <div className='container'>
+        <div className='row my-2' style={{
+            background: `url(${'/images/sale.jpg'}) center/cover`
+        }}>
+      <Sale />
+        </div>
+      <div className='row my-2'>
+      <Services />
+      </div>
+      <div className='row my-5 border-top border-bottom border-2 align-items-center' style={{height:158}}>
+      <Brands />
+      </div>
       </div>
     </Layout>
   );

@@ -34,11 +34,7 @@ const ProductList = () => {
   
     return (
       <Layout type='leftSidebar' selectedCategory={selectedCategory} onCategoryClick={handleCategoryClick} categories={categories}>
-      
          
-         {/* <div className='border border-2 p-2'>
-         <SideBar onCategoryClick={handleCategoryClick} categories={categories} />
-         </div>  */}
          <div className=" row border border-2 d-flex flex-wrap" style={{backgroundColor:'white'}}>
             {filteredProducts.map((item) => (
               <Card key={item.id} item={item} />

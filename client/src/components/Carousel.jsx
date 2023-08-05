@@ -45,7 +45,7 @@ const CarouselComponent = () => {
         {images.map((image, index) => (
           <Carousel.Item key={index}>
             <div
-              className='border border-2 d-flex flex-column align-items-start justify-content-center'
+              className=' d-flex flex-column align-items-start justify-content-center'
               style={{
                 ...image.style, // Merge the image-specific styles with the default styles
                 background: `url(${image.src}) center/cover`, // Set the image as background

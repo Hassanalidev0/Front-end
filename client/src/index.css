@@ -19,7 +19,7 @@
 .form-login{
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   border: 1px solid red;
 }
 .login-container {
